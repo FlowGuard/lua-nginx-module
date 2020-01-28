@@ -254,6 +254,9 @@ void ngx_http_lua_cleanup_free(ngx_http_request_t *r,
 void ngx_http_lua_set_sa_restart(ngx_log_t *log);
 #endif
 
+ngx_addr_t *ngx_http_lua_parse_addr(lua_State *L, u_char *text, size_t len);
+
+
 #define ngx_http_lua_check_if_abortable(L, ctx)                              \
     if ((ctx)->no_abort) {                                                   \
         return luaL_error(L, "attempt to abort with pending subrequests");   \
